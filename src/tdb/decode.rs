@@ -1,6 +1,5 @@
 use super::consts::*;
 use crate::Record;
-use std::convert::TryInto;
 use thiserror::Error;
 
 #[derive(Error, Debug)]
