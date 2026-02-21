@@ -85,20 +85,12 @@ impl<W: Write> Writer<W> {
 fn write_string(buf: &mut [u8; RECORD_SIZE], offset: usize, value: &str) {
     let max_content = STRING_FIELD_SIZE - 1;
     let truncated = if value.len() > max_content {
-        &value[..floor_char_boundary(value, max_content)]
+        &value[..value.floor_char_boundary(max_content)]
     } else {
         value
     };
     buf[offset..offset + truncated.len()].copy_from_slice(truncated.as_bytes());
     // remaining bytes are already zero from initialization
-}
-
-fn floor_char_boundary(s: &str, index: usize) -> usize {
-    let mut i = index;
-    while !s.is_char_boundary(i) {
-        i -= 1;
-    }
-    i
 }
 
 fn parse_flarm_id(s: &str) -> Result<u32, EncodeError> {

@@ -13,11 +13,10 @@ impl<R: Read> Reader<R> {
 
 impl<R: Read> Read for Reader<R> {
     fn read(&mut self, buf: &mut [u8]) -> std::io::Result<usize> {
-        self.inner.read(buf).map(|result| {
+        self.inner.read(buf).inspect(|_| {
             for byte in buf.iter_mut() {
                 *byte = byte.wrapping_sub(1);
             }
-            result
         })
     }
 }
