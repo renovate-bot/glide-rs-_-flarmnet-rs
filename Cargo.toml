@@ -6,7 +6,8 @@ authors = ["Tobias Bieniek <tobias.bieniek@gmail.com>"]
 license = "MIT/Apache-2.0"
 repository = "https://github.com/glide-rs/flarmnet-rs.git"
 keywords = ["flarm", "flarmnet", "ogn", "glider", "gliding"]
-edition = "2018"
+edition = "2024"
+rust-version = "1.91.0"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 

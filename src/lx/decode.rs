@@ -1,6 +1,6 @@
-use crate::lx::cipher;
 use crate::Record;
-use minidom::{quick_xml, Element, NSChoice};
+use crate::lx::cipher;
+use minidom::{Element, NSChoice, quick_xml};
 use std::io::BufReader;
 use thiserror::Error;
 
