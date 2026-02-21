@@ -1,5 +1,7 @@
 #[cfg(feature = "lx")]
 pub mod lx;
+#[cfg(feature = "tdb")]
+pub mod tdb;
 #[cfg(feature = "xcsoar")]
 pub mod xcsoar;
 
